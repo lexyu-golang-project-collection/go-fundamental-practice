@@ -10,7 +10,7 @@ import (
 
 func main() {
 	// Open the CSV file
-	file, err := os.Open("data.csv")
+	file, err := os.Open("./data.csv")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -41,7 +41,7 @@ func main() {
 	}
 
 	// Write the JSON data to file
-	err = os.WriteFile("data.json", jsonData, 0644)
+	err = os.WriteFile("./data.json", jsonData, 0644)
 	if err != nil {
 		log.Fatal(err)
 	}
