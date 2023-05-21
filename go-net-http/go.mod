@@ -1,3 +1,3 @@
-module github.com/practice-net-http
+module github.com/lexyu/practice-net-http
 
 go 1.19
