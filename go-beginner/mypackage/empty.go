@@ -1,0 +1,5 @@
+package mypackage
+
+func Empty() {
+
+}
