@@ -1,6 +1,8 @@
 package main
 
 import (
+	"fmt"
+
 	myfunc "github.com/lexyu/go-beginner/mypackage"
 )
 
@@ -34,7 +36,15 @@ func main() {
 	// fmt.Println("---------------------------")
 	// myfunc.Maps()
 	// fmt.Println("---------------------------")
-	myfunc.Generics()
+	// myfunc.Generics()
+	// fmt.Println("---------------------------")
+	// myfunc.Composition()
+	// fmt.Println("---------------------------")
+	// myfunc2.OOP()
+	// fmt.Println("---------------------------")
+	// myfunc.Defined_Types_Associate_Methods()
+	fmt.Println("---------------------------")
+	myfunc.Interfaces()
 	// fmt.Println("---------------------------")
 	// myfunc
 	// fmt.Println("---------------------------")
@@ -46,5 +56,38 @@ func main() {
 	// fmt.Println("---------------------------")
 	// myfunc
 	// fmt.Println("---------------------------")
-
+	// myfunc
+	// fmt.Println("---------------------------")
+	// myfunc
+	// fmt.Println("---------------------------")
+	// myfunc
+	// fmt.Println("---------------------------")
+	// myfunc
+	// fmt.Println("---------------------------")
+	// myfunc
+	// fmt.Println("---------------------------")
+	// myfunc
+	// fmt.Println("---------------------------")
+	// myfunc
+	// fmt.Println("---------------------------")
+	// myfunc
+	// fmt.Println("---------------------------")
+	// myfunc
+	// fmt.Println("---------------------------")
+	// myfunc
+	// fmt.Println("---------------------------")
+	// myfunc
+	// fmt.Println("---------------------------")
+	// myfunc
+	// fmt.Println("---------------------------")
+	// myfunc
+	// fmt.Println("---------------------------")
+	// myfunc
+	// fmt.Println("---------------------------")
+	// myfunc
+	// fmt.Println("---------------------------")
+	// myfunc
+	// fmt.Println("---------------------------")
+	// myfunc
+	// fmt.Println("---------------------------")
 }
