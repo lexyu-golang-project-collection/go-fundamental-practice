@@ -4,7 +4,12 @@ import (
 	"fmt"
 
 	myfunc "github.com/lexyu/go-beginner/mypackage"
+	myfunc3 "github.com/lexyu/go-beginner/mypackage/concurrency"
+	myfunc2 "github.com/lexyu/go-beginner/mypackage/oop"
 )
+
+var pl = fmt.Println
+var pf = fmt.Printf
 
 func main() {
 	myfunc.Empty()
@@ -41,18 +46,20 @@ func main() {
 	// myfunc.Composition()
 	// fmt.Println("---------------------------")
 	// myfunc2.OOP()
+	myfunc2.Empty()
 	// fmt.Println("---------------------------")
 	// myfunc.Defined_Types_Associate_Methods()
-	fmt.Println("---------------------------")
-	myfunc.Interfaces()
 	// fmt.Println("---------------------------")
-	// myfunc
+	// myfunc.Interfaces()
 	// fmt.Println("---------------------------")
-	// myfunc
+	// myfunc3.Goroutines()
+	myfunc3.Empty()
 	// fmt.Println("---------------------------")
-	// myfunc
+	// myfunc.Channels()
 	// fmt.Println("---------------------------")
-	// myfunc
+	// myfunc.Mutex()
+	// fmt.Println("---------------------------")
+	myfunc.Closures()
 	// fmt.Println("---------------------------")
 	// myfunc
 	// fmt.Println("---------------------------")
