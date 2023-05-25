@@ -59,11 +59,11 @@ func main() {
 	// fmt.Println("---------------------------")
 	// myfunc.Mutex()
 	// fmt.Println("---------------------------")
-	myfunc.Closures()
+	// myfunc.Closures()
+	fmt.Println("---------------------------")
+	// myfunc.Recursion(10)
 	// fmt.Println("---------------------------")
-	// myfunc
-	// fmt.Println("---------------------------")
-	// myfunc
+	myfunc.Regex()
 	// fmt.Println("---------------------------")
 	// myfunc
 	// fmt.Println("---------------------------")
