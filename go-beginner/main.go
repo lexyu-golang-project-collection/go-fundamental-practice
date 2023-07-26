@@ -4,8 +4,9 @@ import (
 	"fmt"
 
 	myfunc "github.com/lexyu/go-beginner/mypackage"
-	myfunc3 "github.com/lexyu/go-beginner/mypackage/concurrency"
-	myfunc2 "github.com/lexyu/go-beginner/mypackage/oop"
+	concurrency "github.com/lexyu/go-beginner/mypackage/concurrency"
+	oop "github.com/lexyu/go-beginner/mypackage/oop"
+	regex "github.com/lexyu/go-beginner/mypackage/regular-expression"
 )
 
 var pl = fmt.Println
@@ -46,14 +47,14 @@ func main() {
 	// myfunc.Composition()
 	// fmt.Println("---------------------------")
 	// myfunc2.OOP()
-	myfunc2.Empty()
+	oop.Empty()
 	// fmt.Println("---------------------------")
 	// myfunc.Defined_Types_Associate_Methods()
 	// fmt.Println("---------------------------")
 	// myfunc.Interfaces()
 	// fmt.Println("---------------------------")
-	// myfunc3.Goroutines()
-	myfunc3.Empty()
+	// concurrency.Goroutines()
+	concurrency.Empty()
 	// fmt.Println("---------------------------")
 	// myfunc.Channels()
 	// fmt.Println("---------------------------")
@@ -63,7 +64,7 @@ func main() {
 	fmt.Println("---------------------------")
 	// myfunc.Recursion(10)
 	// fmt.Println("---------------------------")
-	myfunc.Regex()
+	regex.Regex()
 	// fmt.Println("---------------------------")
 	// myfunc
 	// fmt.Println("---------------------------")

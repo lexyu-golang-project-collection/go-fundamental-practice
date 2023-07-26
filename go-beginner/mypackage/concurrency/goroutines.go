@@ -20,6 +20,7 @@ func Goroutines() {
 	go printTo10()
 	time.Sleep(2 * time.Second)
 }
+
 func Empty() {
 
 }
