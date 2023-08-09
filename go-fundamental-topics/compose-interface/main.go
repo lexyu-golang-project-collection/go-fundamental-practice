@@ -2,7 +2,6 @@ package main
 
 import (
 	"bytes"
-	"crypto/sha1"
 	"encoding/hex"
 	"fmt"
 	"io"
@@ -10,27 +9,46 @@ import (
 
 func main() {
 	payload := []byte("Hi, high value software engineer")
-	hashAndBroadcast(bytes.NewReader(payload))
+	// hashAndBroadcast(bytes.NewReader(payload))
+	hashAndBroadcast(newHashReader(payload))
+}
+
+type HashReader interface {
+	io.Reader
+	hash() string
 }
 
 type hashReader struct {
-	bytes.Reader
+	*bytes.Reader
 	buf *bytes.Buffer
 }
 
-type NewHashReader(b []byte) *hashReader {
-
+func newHashReader(b []byte) *hashReader {
+	return &hashReader{
+		Reader: bytes.NewReader(b),
+		buf:    bytes.NewBuffer(b),
+	}
 }
 
-func hashAndBroadcast(r io.Reader) error {
-	b, err := io.ReadAll(r)
+func (h *hashReader) hash() string {
+	return hex.EncodeToString(h.buf.Bytes())
+}
 
-	if err != nil {
-		return err
-	}
+func hashAndBroadcast(r HashReader) error {
+	/*
+		b, err := io.ReadAll(r)
+		if err != nil {
+			return err
+		}
+		hash := sha1.Sum(b)
+	*/
 
-	hash := sha1.Sum(b)
-	fmt.Println(hex.EncodeToString(hash[:]))
+	// hash := r.(*hashReader).hash()
+
+	hash := r.hash()
+
+	fmt.Println(hash)
+	// fmt.Println(hex.EncodeToString(hash[:]))
 
 	// read already, will empty
 	return broadcast(r)
