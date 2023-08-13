@@ -3,17 +3,14 @@ package main
 import (
 	"fmt"
 
-	myfunc "github.com/lexyu/go-beginner/mypackage"
-	concurrency "github.com/lexyu/go-beginner/mypackage/concurrency"
-	oop "github.com/lexyu/go-beginner/mypackage/oop"
-	regex "github.com/lexyu/go-beginner/mypackage/regular-expression"
+	method "github.com/lexyu/go-beginner/mypackage/method"
 )
 
 var pl = fmt.Println
 var pf = fmt.Printf
 
 func main() {
-	myfunc.Empty()
+	// myfunc.Empty()
 	// myfunc.Hello()
 	// fmt.Println("---------------------------")
 	// myfunc.Casting()
@@ -47,14 +44,14 @@ func main() {
 	// myfunc.Composition()
 	// fmt.Println("---------------------------")
 	// myfunc2.OOP()
-	oop.Empty()
+	// oop.Empty()
 	// fmt.Println("---------------------------")
 	// myfunc.Defined_Types_Associate_Methods()
 	// fmt.Println("---------------------------")
 	// myfunc.Interfaces()
 	// fmt.Println("---------------------------")
 	// concurrency.Goroutines()
-	concurrency.Empty()
+	// concurrency.Empty()
 	// fmt.Println("---------------------------")
 	// myfunc.Channels()
 	// fmt.Println("---------------------------")
@@ -64,7 +61,7 @@ func main() {
 	fmt.Println("---------------------------")
 	// myfunc.Recursion(10)
 	// fmt.Println("---------------------------")
-	regex.Regex()
+	// regex.Regex()
 	// fmt.Println("---------------------------")
 	// myfunc
 	// fmt.Println("---------------------------")
@@ -96,6 +93,11 @@ func main() {
 	// fmt.Println("---------------------------")
 	// myfunc
 	// fmt.Println("---------------------------")
-	// myfunc
-	// fmt.Println("---------------------------")
+	employee1 := method.Employee{1, "L", 1000}
+	employee1.AddTileValueReciever("Mr.")
+	fmt.Println("Value Reciever Employee Name ", employee1.Name)
+	fmt.Println("---------------------------")
+	employee2 := &method.Employee{2, "LL", 100}
+	employee2.AddTilePointerReciever("Mr.")
+	fmt.Println("Pointer Reciever Employee Name ", employee2.Name)
 }
