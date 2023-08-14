@@ -2,8 +2,6 @@ package main
 
 import (
 	"fmt"
-
-	method "github.com/lexyu/go-beginner/mypackage/method"
 )
 
 var pl = fmt.Println
@@ -93,11 +91,24 @@ func main() {
 	// fmt.Println("---------------------------")
 	// myfunc
 	// fmt.Println("---------------------------")
-	employee1 := method.Employee{1, "L", 1000}
-	employee1.AddTileValueReciever("Mr.")
-	fmt.Println("Value Reciever Employee Name ", employee1.Name)
+	// employee1 := method.Employee{1, "L", 1000}
+	// employee1.AddTileValueReciever("Mr.")
+	// fmt.Println("Value Reciever Employee Name ", employee1.Name)
+	// employee2 := &method.Employee{Id: 2, Name: "LL", Age: 100}
+	// employee2.AddTilePointerReciever("Mr.")
+	// fmt.Println("Pointer Reciever Employee Name ", employee2.Name)
+	// var worker1 method.Worker = method.Employee{Id: 3, Name: "LLL", Age: 50} // compile error
+	// var worker1 method.Worker = &method.Employee{Id: 3, Name: "LLL", Age: 50}
+	// worker1.WorkPointerReceiver()
+	// var worker2 method.Worker = &method.Employee{Id: 4, Name: "LLLL", Age: 20}
+	// worker2.WorkValueReceiver()
+	// var worker3 method.Worker = method.Employee{Id: 5, Name: "LLLLL", Age: 200} // error
+	// worker3.WorkValueReceiver()
+	// fmt.Println("---------------------------")
+
+	// phone := method.NewPhone("Tom")
+	// var caller method.PhoneFeatures = phone
+	// var caller method.PhoneFeatures = &phone
+	// caller.Call()
 	fmt.Println("---------------------------")
-	employee2 := &method.Employee{2, "LL", 100}
-	employee2.AddTilePointerReciever("Mr.")
-	fmt.Println("Pointer Reciever Employee Name ", employee2.Name)
 }
