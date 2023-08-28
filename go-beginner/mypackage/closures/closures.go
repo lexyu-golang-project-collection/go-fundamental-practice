@@ -1,6 +1,6 @@
 package mypackage
 
-import g "github.com/lexyu/go-beginner/mypackage/global"
+import g "github.com/lexyu-golang-project-collection/go-fundamental-practice/mypackage/global"
 
 func useFunc(f func(int, int) int, x, y int) {
 	g.PL("Answer :", (f(x, y)))

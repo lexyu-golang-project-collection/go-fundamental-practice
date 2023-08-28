@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"unicode/utf8"
 
-	g "github.com/lexyu/go-beginner/mypackage/global"
+	g "github.com/lexyu-golang-project-collection/go-fundamental-practice/mypackage/global"
 )
 
 func Runes() {

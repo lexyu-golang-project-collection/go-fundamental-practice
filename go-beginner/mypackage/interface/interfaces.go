@@ -1,6 +1,6 @@
 package mypackage
 
-import g "github.com/lexyu/go-beginner/mypackage/global"
+import g "github.com/lexyu-golang-project-collection/go-fundamental-practice/mypackage/global"
 
 type Animal interface {
 	AngrySound()

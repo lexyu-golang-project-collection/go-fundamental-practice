@@ -6,8 +6,8 @@ import (
 	"log"
 	"os"
 
+	g "github.com/lexyu-golang-project-collection/go-fundamental-practice/mypackage/global"
 	"github.com/lexyu-golang-project-collection/logger"
-	g "github.com/lexyu/go-beginner/mypackage/global"
 )
 
 func Hello() {

@@ -1,3 +1,3 @@
-module github.com/lexyu/practice-net-http
+module github.com/lexyu-golang-project-collection/go-fundamental-practice/practice-net-http
 
-go 1.19
+go 1.20

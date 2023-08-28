@@ -5,7 +5,7 @@ import (
 	"sync"
 	"time"
 
-	g "github.com/lexyu/go-beginner/mypackage/global"
+	g "github.com/lexyu-golang-project-collection/go-fundamental-practice/mypackage/global"
 )
 
 type Account struct {
