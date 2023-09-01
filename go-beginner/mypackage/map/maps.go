@@ -3,7 +3,7 @@ package mypackage
 import (
 	"fmt"
 
-	g "github.com/lexyu-golang-project-collection/go-fundamental-practice/mypackage/global"
+	g "github.com/lexyu-golang-project-collection/go-fundamental-practice/go-beginner/mypackage/global"
 )
 
 func Maps() {

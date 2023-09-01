@@ -1,6 +1,6 @@
 package mypackage
 
-import g "github.com/lexyu-golang-project-collection/go-fundamental-practice/mypackage/global"
+import g "github.com/lexyu-golang-project-collection/go-fundamental-practice/go-beginner/mypackage/global"
 
 func Array() {
 	var arr1 [5]int
@@ -26,4 +26,11 @@ func Array() {
 			g.PF("arr3[%d][%d] = %d\n", i, j, arr3[i][j])
 		}
 	}
+
+	g.PL("----------------------------------------------------------------")
+
+	p := []int{1, 2, 3}
+	qwe := 0
+	qwe, p[qwe] = 1, 2
+	g.PL("Exchange ", p, qwe)
 }

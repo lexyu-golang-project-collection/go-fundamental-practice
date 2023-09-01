@@ -1,6 +1,6 @@
 package mypackage
 
-import g "github.com/lexyu-golang-project-collection/go-fundamental-practice/mypackage/global"
+import g "github.com/lexyu-golang-project-collection/go-fundamental-practice/go-beginner/mypackage/global"
 
 func nums1(channel chan int) {
 	channel <- 1
