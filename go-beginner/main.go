@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+
+	myfunc "github.com/lexyu-golang-project-collection/go-fundamental-practice/go-beginner/mypackage/for-loop"
 )
 
 var pl = fmt.Println
@@ -56,12 +58,15 @@ func main() {
 	// myfunc.Mutex()
 	// fmt.Println("---------------------------")
 	// myfunc.Closures()
-	fmt.Println("---------------------------")
+	// fmt.Println("---------------------------")
 	// myfunc.Recursion(10)
 	// fmt.Println("---------------------------")
 	// regex.Regex()
-	// fmt.Println("---------------------------")
-	// myfunc
+
+	fmt.Println("[For Loop]--------------------------------------")
+	myfunc.ForLoop()
+	fmt.Println("[For Loop End]----------------------------------")
+
 	// fmt.Println("---------------------------")
 	// myfunc
 	// fmt.Println("---------------------------")
@@ -110,5 +115,5 @@ func main() {
 	// var caller method.PhoneFeatures = phone
 	// var caller method.PhoneFeatures = &phone
 	// caller.Call()
-	fmt.Println("---------------------------")
+
 }
