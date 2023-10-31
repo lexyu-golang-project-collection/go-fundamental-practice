@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	myfunc "github.com/lexyu-golang-project-collection/go-fundamental-practice/go-beginner/mypackage/for-loop"
+	mych "github.com/lexyu-golang-project-collection/go-fundamental-practice/go-beginner/mypackage/channel"
 )
 
 var pl = fmt.Println
@@ -52,9 +52,9 @@ func main() {
 	// fmt.Println("---------------------------")
 	// concurrency.Goroutines()
 	// concurrency.Empty()
-	// fmt.Println("---------------------------")
-	// myfunc.Channels()
-	// fmt.Println("---------------------------")
+	fmt.Println("---------------------------")
+	mych.Channels()
+	fmt.Println("---------------------------")
 	// myfunc.Mutex()
 	// fmt.Println("---------------------------")
 	// myfunc.Closures()
@@ -63,9 +63,9 @@ func main() {
 	// fmt.Println("---------------------------")
 	// regex.Regex()
 
-	fmt.Println("[For Loop]--------------------------------------")
-	myfunc.ForLoop()
-	fmt.Println("[For Loop End]----------------------------------")
+	// fmt.Println("[For Loop]--------------------------------------")
+	// myfunc.ForLoop()
+	// fmt.Println("[For Loop End]----------------------------------")
 
 	// fmt.Println("---------------------------")
 	// myfunc
