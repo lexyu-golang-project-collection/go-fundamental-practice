@@ -7,16 +7,19 @@ func main() {
 
 	values := []string{"a", "b", "c"}
 
+	// /*
 	for _, v := range values {
 		go func() {
 			fmt.Println(v)
 			chan1 <- true
 		}()
 	}
+	// */
 
 	fmt.Println("-------------------------------------------")
 
 	// wait for all goroutines to complete before exiting
+	// /*
 	for _ = range values {
 		<-chan1
 	}
@@ -27,10 +30,12 @@ func main() {
 			chan1 <- true
 		}(v)
 	}
+	// */
 
 	fmt.Println("-------------------------------------------")
 
 	// wait for all goroutines to complete before exiting
+	// /*
 	for _ = range values {
 		<-chan1
 	}
@@ -52,5 +57,6 @@ func main() {
 	for _, print := range prints {
 		print()
 	}
+	// */
 
 }
