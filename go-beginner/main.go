@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	mych "github.com/lexyu-golang-project-collection/go-fundamental-practice/go-beginner/mypackage/channel"
+	myfunc "github.com/lexyu-golang-project-collection/go-fundamental-practice/go-beginner/mypackage/pointer"
 )
 
 var pl = fmt.Println
@@ -31,7 +31,7 @@ func main() {
 	// fmt.Println("---------------------------")
 	// myfunc.Funcs()
 	// fmt.Println("---------------------------")
-	// myfunc.Pointers()
+	myfunc.Pointers()
 	// fmt.Println("---------------------------")
 	// myfunc.FileIO()
 	// fmt.Println("---------------------------")
@@ -53,7 +53,7 @@ func main() {
 	// concurrency.Goroutines()
 	// concurrency.Empty()
 	fmt.Println("---------------------------")
-	mych.Channels()
+	// mych.Channels()
 	fmt.Println("---------------------------")
 	// myfunc.Mutex()
 	// fmt.Println("---------------------------")
