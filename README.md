@@ -1,3 +1,8 @@
+# Sorted Practices
+- Composition
+- High Order Function
+- JSON Encode / Decode
+
 # Ref
 - [go-net-http](go-net-http)
   - [Fabrzy](https://www.youtube.com/playlist?list=PLTxucv2uVGvixNDTqAyJJsbeUO0yNayOd)

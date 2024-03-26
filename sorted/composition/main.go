@@ -1,4 +1,4 @@
-package mypackage
+package main
 
 import "fmt"
 
@@ -7,6 +7,7 @@ type contact struct {
 	lname string
 	phone string
 }
+
 type business struct {
 	name    string
 	address string
@@ -16,8 +17,9 @@ type business struct {
 func (b business) info() {
 	fmt.Printf("Contact %s %s at %s", b.contact.fname, b.contact.lname, b.name)
 }
-func Composition() {
-	con1 := contact{"Lex", "Yu", "123-456-789"}
-	bus1 := business{"LEX Corp", "567 North St.", con1}
-	bus1.info()
+
+func main() {
+	con := contact{"Lex", "Yu", "123-456-789"}
+	bus := business{"ABC Enterprise", "567 North St.", con}
+	bus.info()
 }
