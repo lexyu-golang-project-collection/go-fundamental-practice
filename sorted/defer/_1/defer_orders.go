@@ -3,16 +3,17 @@ package main
 import "fmt"
 
 func printString(str string) {
-	fmt.Printf("%q ", str)
+	fmt.Printf("%q \n", str)
 }
 
 func printInt(i int) {
-	fmt.Printf("%d ", i)
+	fmt.Printf("%d \n", i)
 }
 
 func printFloat(f float64) {
-	fmt.Printf("%.2f ", f)
+	fmt.Printf("%.2f \n", f)
 }
+
 func main() {
 	printString("browser") // 1
 	defer printInt(32)     // 7

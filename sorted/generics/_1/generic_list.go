@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 type GenericList[T comparable] struct {
 	data []T
 }
@@ -49,4 +51,18 @@ func (l *GenericList[T]) RemoveByValue(value T) {
 			l.data = append(l.data[:i], l.data[i+1:]...)
 		}
 	}
+}
+
+func main() {
+	glist := NewGemericList[string]()
+
+	glist.Insert("Bug")
+	glist.Insert("Foo")
+	glist.Insert("Bar")
+	glist.Insert("Unknown")
+
+	glist.RemoveByValue("Foo")
+	glist.Remove(2)
+
+	fmt.Printf("%+v\n", glist)
 }
