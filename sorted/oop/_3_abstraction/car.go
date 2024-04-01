@@ -1,7 +1,8 @@
-package oop
+package main
+
+import "fmt"
 
 // An interface is a collection of methods
-
 type Car interface {
 	Drive() string
 	Stop() string
@@ -17,4 +18,12 @@ func (b BMW) Drive() string {
 
 func (b BMW) Stop() string {
 	return "Stop " + b.Model
+}
+
+func main() {
+	c1 := &BMW{"TestCar"}
+
+	fmt.Println("Model =", c1.Model)
+	fmt.Println(c1.Drive())
+	fmt.Println(c1.Stop())
 }
