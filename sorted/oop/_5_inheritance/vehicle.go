@@ -1,4 +1,6 @@
-package oop
+package main
+
+import "fmt"
 
 type Vehicle struct {
 	Seats int
@@ -11,4 +13,10 @@ type Car struct {
 
 type MotorCycle struct {
 	Base Vehicle
+}
+
+func main() {
+	v1 := Vehicle{4, "Red"}
+
+	fmt.Println(v1)
 }

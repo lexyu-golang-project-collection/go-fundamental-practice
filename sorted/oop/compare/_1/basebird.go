@@ -1,4 +1,4 @@
-package eg4
+package main
 
 import "fmt"
 
@@ -21,3 +21,21 @@ func (this *DerivedBird) Add() {
 	this.Age = this.Age + 2
 	fmt.Printf("DerivedBird after add: Age=%d\n", this.Age)
 }
+
+func main() {
+	var b1 BaseBird
+	var b2 DerivedBird
+
+	b1 = BaseBird{Age: 1}
+	b1.Add()
+
+	b2 = DerivedBird{BaseBird{1}}
+	b2.Add()
+}
+
+/**
+BaseBird before add: Age=1
+BaseBird after add: Age=2
+DerivedBird before add: Age=1
+DerivedBird after add: Age=3
+*/

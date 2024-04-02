@@ -1,4 +1,4 @@
-package eg5
+package main
 
 import "fmt"
 
@@ -24,3 +24,21 @@ func (db *DerivedBird) Add() {
 	db.Age = db.Age + 2
 	fmt.Printf("DerivedBird after add: Age=%d\n", db.Age)
 }
+
+func main() {
+	var b1 BaseBird
+	var b2 DerivedBird
+
+	b1 = BaseBird{Age: 1}
+	b1.Cal()
+
+	b2 = DerivedBird{BaseBird{1}}
+	b2.Cal()
+}
+
+/**
+BaseBird before add: Age=1
+BaseBird after add: Age=2
+BaseBird before add: Age=1
+BaseBird after add: Age=2
+*/

@@ -1,4 +1,4 @@
-package oop
+package main
 
 import (
 	"errors"
@@ -66,6 +66,6 @@ func OOP() {
 	fmt.Printf("Day : %d/%d/%d\n", date.Month(), date.Day(), date.Year())
 }
 
-func Empty() {
-
+func main() {
+	OOP()
 }
