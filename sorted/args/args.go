@@ -1,14 +1,12 @@
-package mypackage
+package main
 
 import (
 	"fmt"
 	"os"
 	"strconv"
-
-	g "github.com/lexyu-golang-project-collection/go-fundamental-practice/go-beginner/mypackage/global"
 )
 
-func CLI() {
+func main() {
 	fmt.Println(os.Args)
 	args := os.Args[1:]
 	iArgs := []int{}
@@ -20,7 +18,7 @@ func CLI() {
 		iArgs = append(iArgs, val)
 	}
 
-	g.PL("iArgs = ", iArgs)
+	fmt.Println("iArgs = ", iArgs)
 
 	max := 0
 	for _, val := range iArgs {
