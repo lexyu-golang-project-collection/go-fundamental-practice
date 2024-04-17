@@ -9,13 +9,11 @@ import (
 )
 
 var (
-	id          int
-	name        string
-	dbconn, err = sql.Open("mysql",
-		"root:P@ssw0rd@tcp(127.0.0.1:3306)/demo")
+	id   int
+	name string
 )
 
-func Conn() {
+func Conn(dbconn *sql.DB, err error) {
 
 	if err != nil {
 		log.Fatal(err)
@@ -29,7 +27,7 @@ func Conn() {
 	}
 }
 
-func FetchData() {
+func FetchData(dbconn *sql.DB) {
 
 	rows, err := dbconn.Query("select custid, name from customer where custid = ?", 100)
 	if err != nil {
