@@ -1,12 +1,10 @@
-package mypackage
+package main
 
 import (
 	"fmt"
-
-	g "github.com/lexyu-golang-project-collection/go-fundamental-practice/go-beginner/mypackage/global"
 )
 
-func Maps() {
+func main() {
 	// var myMap map [keyType]valueType
 	var heroes map[string]string
 	heroes = make(map[string]string)
@@ -20,9 +18,9 @@ func Maps() {
 
 	superPets := map[int]string{1: "Krypto", 2: "Bat Cow"}
 	fmt.Printf("Batman is %v\n", heroes["Batman"])
-	g.PL("Chip :", superPets[3])
+	fmt.Println("Chip :", superPets[3])
 	_, ok := superPets[3]
-	g.PL("Is there a 3rd pet :", ok)
+	fmt.Println("Is there a 3rd pet :", ok)
 	for k, v := range heroes {
 		fmt.Printf("%s is %s\n", k, v)
 	}
