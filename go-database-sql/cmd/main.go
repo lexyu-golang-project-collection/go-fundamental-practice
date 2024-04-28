@@ -20,5 +20,12 @@ func main() {
 		"root:"+DB_PASS+"@tcp(127.0.0.1:3306)/demo")
 
 	db_service.Conn(dbconn, err)
-	db_service.FetchData(dbconn)
+	defer dbconn.Close()
+
+	db_service.QueryDemo(dbconn)
+	db_service.PrepareDemo(dbconn)
+	db_service.SingleRowQuery(dbconn)
+	db_service.SingleRowPrepare(dbconn)
+	db_service.InsertData(dbconn)
+
 }
