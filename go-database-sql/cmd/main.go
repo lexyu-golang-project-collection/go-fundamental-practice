@@ -23,6 +23,11 @@ func main() {
 	defer dbconn.Close()
 	db_service.Init(dbconn)
 
+	p := db_service.Product{nil, "Book", 100.55, true, nil}
+	pk := db_service.InsertProduct(dbconn, p)
+
+	fmt.Println("Primary Key:", pk)
+
 	// db_service.QueryDemo(dbconn)
 	// db_service.PrepareDemo(dbconn)
 	// db_service.SingleRowQuery(dbconn)

@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"fmt"
 	"log"
+	"time"
 
 	_ "github.com/go-sql-driver/mysql"
 )
@@ -14,9 +15,11 @@ var (
 )
 
 type Product struct {
-	Nane      string
+	ID        *string
+	Name      string
 	Price     float64
 	Available bool
+	CreateAt  *time.Time
 }
 
 func Conn(dbconn *sql.DB, err error) {
@@ -140,6 +143,31 @@ func createProductTable(db *sql.DB) error {
 	return err
 }
 
-func insertProduct(db *sql.DB) {
+func InsertProduct(db *sql.DB, product Product) int64 {
 
+	// query := `INSERT INTO product (name, price, available) VALUES
+	// ($1, $2, $3) RETURNING id`
+
+	query := `INSERT INTO products (name, price, available) VALUES(?, ?, ?);`
+
+	result, err := db.Exec(query, product.Name, product.Price, product.Available)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	pk, err := result.LastInsertId()
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	var id int64
+
+	err = db.QueryRow("SELECT LAST_INSERT_ID()").Scan(&id)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println("ID:", id)
+
+	return pk
 }
