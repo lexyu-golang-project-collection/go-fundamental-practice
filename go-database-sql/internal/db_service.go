@@ -13,6 +13,12 @@ var (
 	name string
 )
 
+type Product struct {
+	Nane      string
+	Price     float64
+	Available bool
+}
+
 func Conn(dbconn *sql.DB, err error) {
 
 	if err != nil {
@@ -110,4 +116,30 @@ func InsertData(dbconn *sql.DB) {
 		log.Fatal(err)
 	}
 	log.Printf("ID = %d, affected = %d\n", lastId, rowCnt)
+}
+
+func Init(db *sql.DB) {
+	err := createProductTable(db)
+	if err != nil {
+		log.Fatal(err)
+	}
+}
+
+func createProductTable(db *sql.DB) error {
+
+	query := `CREATE TABLE IF NOT EXISTS products(
+		id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+		name VARCHAR(255) NOT NULL,
+		price INT NOT NULL,
+		available BOOLEAN,
+		create_at timestamp DEFAULT CURRENT_TIMESTAMP
+	)`
+
+	_, err := db.Exec(query)
+
+	return err
+}
+
+func insertProduct(db *sql.DB) {
+
 }

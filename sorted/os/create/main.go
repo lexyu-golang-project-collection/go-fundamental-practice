@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	file, err := os.Create("demo.txt")
+	file, err := os.Create("../demo.txt")
 	if err != nil {
 		fmt.Println(err)
 		return

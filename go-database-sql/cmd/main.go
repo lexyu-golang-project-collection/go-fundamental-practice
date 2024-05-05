@@ -21,11 +21,12 @@ func main() {
 
 	db_service.Conn(dbconn, err)
 	defer dbconn.Close()
+	db_service.Init(dbconn)
 
-	db_service.QueryDemo(dbconn)
-	db_service.PrepareDemo(dbconn)
-	db_service.SingleRowQuery(dbconn)
-	db_service.SingleRowPrepare(dbconn)
-	db_service.InsertData(dbconn)
+	// db_service.QueryDemo(dbconn)
+	// db_service.PrepareDemo(dbconn)
+	// db_service.SingleRowQuery(dbconn)
+	// db_service.SingleRowPrepare(dbconn)
+	// db_service.InsertData(dbconn)
 
 }
