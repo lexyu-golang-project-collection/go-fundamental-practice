@@ -23,10 +23,31 @@ func main() {
 	defer dbconn.Close()
 	db_service.Init(dbconn)
 
-	p := db_service.Product{nil, "Book", 100.55, true, nil}
-	pk := db_service.InsertProduct(dbconn, p)
+	/*
+		var pk int64
+		for i := 0; i < 5; i++ {
+			price := rand.Float64()*(200-50) + 50
 
-	fmt.Println("Primary Key:", pk)
+			isAvailable := rand.Intn(2) == 0
+
+			// Create Product instance
+			product := db_service.Product{
+				Name:      "Book" + strconv.Itoa(i),
+				Price:     price,
+				Available: isAvailable,
+			}
+			pk = db_service.InsertProduct(dbconn, product)
+		}
+		fmt.Println("Primary Key:", pk)
+	// */
+
+	// productById := db_service.GetProductById(dbconn, 5555)
+	// fmt.Printf("%+v", productById)
+
+	products := db_service.GetProducts(dbconn)
+	for _, p := range products {
+		fmt.Printf("%+v\n", p)
+	}
 
 	// db_service.QueryDemo(dbconn)
 	// db_service.PrepareDemo(dbconn)

@@ -4,7 +4,6 @@ import (
 	"database/sql"
 	"fmt"
 	"log"
-	"time"
 
 	_ "github.com/go-sql-driver/mysql"
 )
@@ -15,11 +14,11 @@ var (
 )
 
 type Product struct {
-	ID        *string
+	ID        string
 	Name      string
 	Price     float64
 	Available bool
-	CreateAt  *time.Time
+	CreateAt  string
 }
 
 func Conn(dbconn *sql.DB, err error) {
@@ -170,4 +169,43 @@ func InsertProduct(db *sql.DB, product Product) int64 {
 	fmt.Println("ID:", id)
 
 	return pk
+}
+
+func GetProductById(db *sql.DB, pk int64) Product {
+	query := `SELECT name, price, available, create_at FROM products WHERE id = ?`
+
+	p := &Product{}
+
+	err := db.QueryRow(query, pk).Scan(&p.Name, &p.Price, &p.Available, &p.CreateAt)
+	if err != nil {
+		if err == sql.ErrNoRows {
+			log.Fatalf("No rows found with ID %d", pk)
+		} else {
+			log.Fatal(err)
+		}
+	}
+
+	return *p
+}
+
+func GetProducts(db *sql.DB) []Product {
+	products := []Product{}
+
+	rows, err := db.Query("SELECT id, name, price, available, create_at FROM products")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer rows.Close()
+
+	for rows.Next() {
+		p := &Product{}
+
+		err := rows.Scan(&p.ID, &p.Name, &p.Price, &p.Available, &p.CreateAt)
+		if err != nil {
+			log.Fatal(err)
+		}
+		products = append(products, *p)
+	}
+
+	return products
 }
