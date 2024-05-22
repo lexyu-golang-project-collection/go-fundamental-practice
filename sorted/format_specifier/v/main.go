@@ -11,6 +11,8 @@ type Person struct {
 }
 
 func main() {
+	// %v : Guesses based on data type
+
 	person := Person{
 		Name:    "John",
 		Age:     30,
