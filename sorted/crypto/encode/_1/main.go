@@ -13,7 +13,7 @@ func main() {
 		x++
 	}
 
-	rand.Seed(time.Now().UnixNano())
+	rand.New(rand.NewSource(time.Now().UnixNano()))
 	fmt.Println(rand.Intn(1000))
 
 }
