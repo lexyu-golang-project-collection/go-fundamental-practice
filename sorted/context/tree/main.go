@@ -10,7 +10,6 @@ import (
 type contextKey string
 
 const (
-	// 為不同層級定義不同的 key
 	ctx1Key = contextKey("ctx1_value")
 	ctx2Key = contextKey("ctx2_value")
 	ctx3Key = contextKey("ctx3_value")
@@ -30,8 +29,9 @@ func main() {
 	// Ctx 2 (G2, G3 共享)
 	ctx2 := context.WithValue(ctx1, ctx2Key, "ctx2-value")
 
-	// Ctx 3 (G4, G5 共享)
-	ctx3 := context.WithValue(ctx2, ctx3Key, "ctx3-value")
+	// Ctx 3 (G4, G5 共享) - 加入 cancel
+	ctx3, cancel3 := context.WithCancel(ctx2)
+	ctx3 = context.WithValue(ctx3, ctx3Key, "ctx3-value")
 
 	// Ctx 4 (G6 使用)
 	ctx4 := context.WithValue(ctx2, ctx4Key, "ctx4-value")
@@ -142,8 +142,18 @@ func main() {
 		}
 	}()
 
-	time.Sleep(3 * time.Second)
-	fmt.Println("\nCancelling from ctx1...")
+	// 先運行一段時間
+	time.Sleep(2 * time.Second)
+
+	// 只取消 G4, G5
+	fmt.Println("\nCancelling G4 and G5 (ctx3)...")
+	cancel3()
+
+	// 繼續運行一段時間
+	time.Sleep(2 * time.Second)
+
+	// 最後取消所有
+	fmt.Println("\nCancelling all (ctx1)...")
 	cancel1()
 
 	wg.Wait()
