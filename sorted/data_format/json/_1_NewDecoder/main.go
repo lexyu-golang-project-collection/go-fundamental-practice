@@ -29,6 +29,6 @@ func main() {
 		todoItem := Todo{}
 
 		json.NewDecoder(resp.Body).Decode(&todoItem)
-		fmt.Printf("Data from API: %+v\n", todoItem)
+		fmt.Printf("Data from NewDecoder: %+v\n", todoItem)
 	}
 }

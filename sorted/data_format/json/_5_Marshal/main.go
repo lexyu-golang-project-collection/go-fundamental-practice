@@ -18,7 +18,6 @@ func main() {
 
 	// Json encoding
 	todo, err := json.Marshal(todoItem)
-	// todo, err := json.MarshalIndent(todoItem, "", "\t")
 
 	if err != nil {
 		log.Fatal(err)

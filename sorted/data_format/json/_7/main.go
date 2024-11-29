@@ -15,13 +15,17 @@ type Todo struct {
 
 func main() {
 	todoItem := Todo{1, 1, "", false}
+	todoItem2 := Todo{2, 2, "Todo2", false}
 
 	// Json encoding
 	todo, err := json.MarshalIndent(todoItem, "", "\t")
+	todo2, err := json.MarshalIndent(todoItem2, "", "\t")
 
 	if err != nil {
 		log.Fatal(err)
 		return
 	}
 	fmt.Println(string(todo))
+	fmt.Println(string(todo2))
+
 }
