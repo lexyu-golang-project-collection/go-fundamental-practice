@@ -21,8 +21,8 @@ func BenchmarkStringComparison(b *testing.B) {
 }
 
 func BenchmarkUniqueStringComparison(b *testing.B) {
-	h1 := unique.Handle(s1)
-	h2 := unique.Handle(s2)
+	h1 := unique.Make(s1)
+	h2 := unique.Make(s2)
 	for range b.N {
 		_ = (h1 == h2)
 	}
