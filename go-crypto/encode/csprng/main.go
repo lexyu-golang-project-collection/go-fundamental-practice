@@ -6,7 +6,7 @@ import (
 	"fmt"
 )
 
-// CSPRNG :Cryptographically Secure Pseudo-Random Number Generator
+// CSPRNG : Cryptographically Secure Pseudo-Random Number Generator
 func GenerateSecretHex40() (string, error) {
 	b := make([]byte, 20) // 20 bytes = 160 bits
 	_, err := rand.Read(b)
