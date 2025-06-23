@@ -1,0 +1,43 @@
+{
+    "name": "Go Development Environment",
+    "image": "mcr.microsoft.com/devcontainers/go:1-1.24-bookworm",
+    "features": {
+        "ghcr.io/devcontainers/features/common-utils:2": {},
+        "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "golang.Go",
+                "Avetis.tokyo-night",
+                "formulahendry.code-runner"
+            ],
+            "settings": {
+                "go.useLanguageServer": true,
+                "go.toolsManagement.checkForUpdates": "local",
+                "go.lintTool": "golangci-lint",
+                "go.formatTool": "gofumpt",
+                "[go]": {
+                    "editor.defaultFormatter": "golang.go",
+                    "editor.formatOnSave": true
+                },
+                "editor.fontSize": 16,
+                "editor.fontFamily": "Fira Code, Consolas, 'Courier New', monospace",
+                "editor.fontLigatures": true,
+                "terminal.integrated.fontSize": 16,
+                "terminal.integrated.fontFamily": "Fira Code, Consolas, 'Courier New', monospace",
+                "code-runner.runInTerminal": true
+            }
+        }
+    },
+    "forwardPorts": [
+        8080,
+        9000
+    ],
+    "postCreateCommand": [
+        "/bin/bash",
+        "-c",
+        "sudo apt update && sudo apt install -y fonts-firacode && go version && go install golang.org/x/tools/gopls@latest && go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest && echo 'Go environment ready with FiraCode'"
+    ],
+    "remoteUser": "vscode"
+}
