@@ -14,7 +14,7 @@
             ],
             "settings": {
                 "locale": "en",
-                "workbench.colorTheme": "Tokyo Night",
+                "workbench.colorTheme": "Tokyo Night AltSynt",
                 "go.useLanguageServer": true,
                 "go.toolsManagement.checkForUpdates": "local",
                 "go.lintTool": "golangci-lint",
