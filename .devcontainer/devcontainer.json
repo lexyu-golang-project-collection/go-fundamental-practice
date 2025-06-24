@@ -13,6 +13,8 @@
                 "formulahendry.code-runner"
             ],
             "settings": {
+                "locale": "en",
+                "workbench.colorTheme": "Tokyo Night",
                 "go.useLanguageServer": true,
                 "go.toolsManagement.checkForUpdates": "local",
                 "go.lintTool": "golangci-lint",
@@ -37,7 +39,7 @@
     "postCreateCommand": [
         "/bin/bash",
         "-c",
-        "sudo apt update && sudo apt install -y fonts-firacode && go version && go install golang.org/x/tools/gopls@latest && go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest && echo 'Go environment ready with FiraCode'"
+        "sudo apt update && sudo apt install -y fonts-firacode && code --uninstall-extension MS-CEINTL.vscode-language-pack-zh-hant || true && go version && go install golang.org/x/tools/gopls@latest && go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest && echo Go environment ready with FiraCode and English locale"
     ],
     "remoteUser": "vscode"
 }
