@@ -20,7 +20,7 @@ jobs:
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
         with:
-          model: openrouter/qwen/qwen3-coder:free
+          model: ${{ secrets.OPENCODE_MODEL }}
 
           prompt: |
             請以繁體中文完整審查這個 Pull Request 中的變更：
