@@ -10,8 +10,8 @@ jobs:
     permissions:
       id-token: write
       contents: read
-      pull-requests: write
-      issues: write
+      pull-requests: read
+      issues: read
     steps:
       - uses: actions/checkout@v6
         with:
@@ -19,10 +19,8 @@ jobs:
       - uses: anomalyco/opencode/github@latest
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           model: openrouter/qwen/qwen3-coder:free
-          use_github_token: true
           prompt: |
             Review this pull request:
             - Check for code quality issues
