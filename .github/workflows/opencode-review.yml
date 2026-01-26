@@ -23,12 +23,13 @@ jobs:
         with:
           # openrouter/qwen/qwen3-coder:free
           # groq/llama-3.3-70b-versatile
+          # groq/meta-llama/llama-4-scout-17b-16e-instruct
           model: ${{ secrets.MODEL }}
 
           prompt: |
             請以繁體中文完整審查這個 Pull Request 中的變更：
-            - 檢查程式碼品質
-            - 提出可能的潛在錯誤或邏輯問題
+            - 僅檢查程式碼品質與明顯錯誤
+            - 避免針對可編譯程式提出假設性防呆警告
             - 給出改善建議與風險注意事項
             請用繁體中文回答，結構化整理回覆。
 
