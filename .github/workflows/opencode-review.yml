@@ -18,9 +18,12 @@ jobs:
           persist-credentials: false
       - uses: anomalyco/opencode/github@latest
         env:
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          # OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
         with:
-          model: ${{ secrets.OPENCODE_MODEL }}
+          # openrouter/qwen/qwen3-coder:free
+          # groq/llama-3.3-70b-versatile
+          model: ${{ secrets.MODEL }}
 
           prompt: |
             請以繁體中文完整審查這個 Pull Request 中的變更：
