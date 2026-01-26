@@ -3,20 +3,40 @@ package main
 import "fmt"
 
 func main() {
-	res := Multiply(1, 2)
-	fmt.Println(res)
+	nums := []int{5, 0, 10, -2}
+	total := SumArray(nums)
+	fmt.Println("Total:", total)
 
-	x := "!"
-	fmt.Println("Hello World", x)
+	average := Divide(total, len(nums))
+	fmt.Println("Average:", average)
 
-	result := Add(5, -3)
-	fmt.Println("Result:", result)
+	// Intentional potential bug: accessing out-of-bounds
+	fmt.Println("First element:", nums[10])
+
+	name := "Alice"
+	PrintGreeting(name, "")
 }
 
-func Multiply(a int, b int) int {
-	return a * b
+// SumArray returns the sum of integers in a slice
+func SumArray(arr []int) int {
+	sum := 0
+	for _, v := range arr {
+		sum += v
+	}
+	return sum
 }
 
-func Add(a, b int) int {
-	return a + b
+// Divide two integers
+func Divide(a, b int) int {
+	return a / b // potential divide by zero if b == 0
+}
+
+// PrintGreeting prints greeting
+func PrintGreeting(name string, title string) {
+	// inconsistent formatting: sometimes uses name only
+	if title != "" {
+		fmt.Printf("Hello %s %s!\n", title, name)
+	} else {
+		fmt.Println("Hello,", name) // inconsistent comma and formatting
+	}
 }
