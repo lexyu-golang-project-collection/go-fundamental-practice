@@ -5,12 +5,18 @@ import "fmt"
 func main() {
 	res := Multiply(1, 2)
 	fmt.Println(res)
+
+	x := "!"
+	fmt.Println("Hello World", x)
+
+	result := Add(5, -3)
+	fmt.Println("Result:", result)
 }
 
 func Multiply(a int, b int) int {
-	result := 0
-	for i := 0; i < a; i++ {
-		result = result + b
-	}
-	return result // Test Agent Review Trigger Or Not
+	return a * b
+}
+
+func Add(a, b int) int {
+	return a + b
 }
