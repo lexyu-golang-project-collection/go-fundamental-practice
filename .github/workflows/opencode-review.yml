@@ -21,8 +21,15 @@ jobs:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
         with:
           model: openrouter/qwen/qwen3-coder:free
+
           prompt: |
-            Review this pull request:
-            - Check for code quality issues
-            - Look for potential bugs
-            - Suggest improvements
+            請以繁體中文完整審查這個 Pull Request 中的變更：
+            - 檢查程式碼品質
+            - 提出可能的潛在錯誤或邏輯問題
+            - 給出改善建議與風險注意事項
+            請用繁體中文回答，結構化整理回覆。
+
+          # Review this pull request:
+          #   - Check for code quality issues
+          #   - Look for potential bugs
+          #   - Suggest improvements
